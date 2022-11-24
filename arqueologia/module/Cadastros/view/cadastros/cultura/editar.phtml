@@ -2,7 +2,8 @@
 <form action="<?=$this->url('cultura',[
     'action' => 'gravar'
 ])?>" method="post">
-Nome: <input type="text" name="nome" autofocus="autofocus">
-<input type="hidden" name="codigo">
+Nome: <input type="text" name="nome" 
+value="<?=$this->cultura->nome?>" autofocus="autofocus">
+<input type="hidden" name="codigo" value="<?=$this->cultura->codigo?>">
 <input type="submit" value="gravar">
 </form>

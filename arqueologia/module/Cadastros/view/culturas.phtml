@@ -1,0 +1,9 @@
+<tr>
+    <td><a href="<?=$this->url('cultura',[
+        'action' => 'editar', 'codigo' => $this->codigo
+    ])?>"><?=$this->codigo?></a></td>
+    <td><?=$this->nome?></td>
+    <td><a href="<?=$this->url('cultura',[
+        'action' => 'excluir', 'codigo' => $this->codigo
+    ])?>">X</a></td>
+</tr>

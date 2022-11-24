@@ -20,24 +20,44 @@ class CulturaController extends AbstractActionController
 
     public function indexAction()
     {
-        return new ViewModel();
+        $culturas = $this->culturaTable->listar();
+
+        return new ViewModel(['culturas' => $culturas]);
     }
 
     public function editarAction()
     {
-        return new ViewModel();
+        $codigo = (int) $this->params('codigo');
+        $nome = '';
+        if (!empty($codigo)){
+            $cultura = $this->culturaTable->get($codigo);
+        }
+
+        return new ViewModel(['cultura' => $cultura]);
     }
 
     public function gravarAction()
     {
+        $codigo = $this->getRequest()->getPost('codigo');
         $nome = $this->getRequest()->getPost('nome');
 
         $cultura = new Cultura();
+        $cultura->codigo = $codigo;
         $cultura->nome = $nome;
 
         $this->culturaTable->gravar($cultura);
 
         return $this->redirect()->toRoute('cultura');
     }
+
+    public function excluirAction()
+    {
+        $codigo = (int) $this->params('codigo');
+
+        $this->culturaTable->excluir($codigo);
+
+        return $this->redirect()->toRoute('cultura');
+    }
+
 
 }

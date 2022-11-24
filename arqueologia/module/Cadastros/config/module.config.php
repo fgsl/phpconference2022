@@ -15,7 +15,7 @@ return [
             'cultura' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route'    => '/cultura[/:action]',
+                    'route'    => '/cultura[/:action[/:codigo]]',
                     'defaults' => [
                         'controller' => Controller\CulturaController::class,
                         'action'     => 'index',
