@@ -15,7 +15,7 @@
 return [
     // ...
     'db' => [
-        'driver' => 'MySQL',
+        'driver' => 'Mysqli',
         'database' => 'arqueologia'
     ],
     'service_manager' => [

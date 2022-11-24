@@ -1,5 +1,7 @@
 <h1>Nova cultura</h1>
-<form action="" method="post">
+<form action="<?=$this->url('cultura',[
+    'action' => 'gravar'
+])?>" method="post">
 Nome: <input type="text" name="nome" autofocus="autofocus">
 <input type="hidden" name="codigo">
 <input type="submit" value="gravar">

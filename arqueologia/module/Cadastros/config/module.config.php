@@ -7,6 +7,7 @@ namespace Cadastros;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
+use Cadastros\Model\CulturaTableFactory;
 
 return [
     'router' => [
@@ -25,7 +26,7 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\CulturaController::class => InvokableFactory::class,
+            Controller\CulturaController::class => Controller\CulturaControllerFactory::class,
         ],
     ],
     'view_manager' => [
@@ -44,4 +45,9 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'service_manager' => [
+        'factories' => [
+            'CulturaTable' => CulturaTableFactory::class
+        ]
+    ]
 ];
