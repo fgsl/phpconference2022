@@ -14,4 +14,13 @@
 
 return [
     // ...
+    'db' => [
+        'driver' => 'MySQL',
+        'database' => 'arqueologia'
+    ],
+    'service_manager' => [
+        'factories' => [
+            'DbAdapter' => Laminas\Db\Adapter\AdapterServiceFactory::class
+        ]
+    ]
 ];

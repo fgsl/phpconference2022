@@ -13,4 +13,10 @@ class CulturaController extends AbstractActionController
     {
         return new ViewModel();
     }
+
+    public function editarAction()
+    {
+        return new ViewModel();
+    }
+
 }
